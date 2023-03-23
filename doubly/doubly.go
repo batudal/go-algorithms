@@ -99,10 +99,10 @@ func (d *DoublyLinkedList[T]) removeNode(node *Node[T]) T {
 		return d.head.value
 	}
 	if node.prev != nil {
-		node.prev = node.next
+		node.prev.next = node.next
 	}
 	if node.next != nil {
-		node.next = node.prev
+		node.next.prev = node.prev
 	}
 
 	if node == d.head {
